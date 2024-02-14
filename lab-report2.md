@@ -51,7 +51,9 @@ class ChatServer {
 }
 ~~~
 ![Image](scs1.png)
+Description: Here, upon using add-message method,handleRequest is used,  the field user is set to jpolitz, and the message is set to hello. The argument is `/add-message?s=Hello&user=jpolitz`
 ![Image](scs2.png)
+Description: Here, upon using add-message method, handleRequest is used, the field user is set to yash, and the message is set to how are you. The argument is `/add-message?s=How are you&user=yash`, it adds to the chat history
 Part2 <br />
 Q1 The absolute path to the private key for your SSH key for logging into `ieng6`
 ![Image](privateKey.png)
