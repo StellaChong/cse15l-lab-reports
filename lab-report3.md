@@ -58,41 +58,72 @@ Result:
 a. 
 ```
 less -E ./technical/config.ini
+setting1=value1
+setting2=value2
 ```
+This command attempts to display `config.ini` and exits automatically if the file fits on one screen. It's useful for quickly viewing short configuration files without needing to manually exit.
+
 b. 
 ```
 less -E ./technical/logs/setup.log
+[2023-02-26 12:00:00] Setup initiated...
+[2023-02-26 12:00:05] Checking prerequisites...
 ```
+Here, less displays setup.log and exits if the log is short enough. It's convenient for scanning brief log files efficiently.
 
 2. `-f`
 a. 
 ```
 less -f ./technical/
+./
+../
+config.ini
+logs/
+scripts/
+binaries/
 ```
+Using `-f` to force less to open a directory lists its contents. It can be a quick way to peek into directory structures.
+
 b.
 ```
 less -f ./technical/binaries/app-binary
+^@ELF^A^A^A^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^@^...
 ```
+Opening a binary file with `-f` allows inspection of non-text content, useful for developers examining executables or binary data.
 
 3. `-F`
 a.
 ```
 less -F ./technical/scripts/install.sh
+#!/bin/bash
 ```
+This command views `install.sh` and exits if it's short, streamlining the process of checking small scripts.
+
 b.
 ```
 less -F ./technical/README.md
+This project is...
 ```
+`less -F` opens `README.md`, exiting immediately if the content is brief. It's perfect for quickly checking documentation files.
 
 4. `-N`
 a. 
 ```
 less -N ./technical/scripts/deploy.sh
+ 1  #!/bin/bash
+ 2  # Deployment script
+ ...
 ```
+Viewing `deploy.sh` with `-N` shows line numbers, aiding in referencing specific parts of scripts during reviews or debugging.
+
 b.
 ```
 less -N ./technical/logs/error.log
+ 1  [2023-02-26 12:05:00] Error: Failed to load configuration
+ 2  [2023-02-26 12:05:01] Warning: Using default settings
+ ...
 ```
+Using `-N` with `error.log` displays line numbers alongside log entries, making it easier to discuss or investigate specific errors.
 
 source: https://phoenixnap.com/kb/less-command-in-linux
 
